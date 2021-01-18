@@ -20,4 +20,8 @@ const Ad = ({item}) => {
   );
 };
 
-export default Ad;
+const areEqual = (prevProps, nextProps) => {
+  return prevProps !== nextProps;
+};
+
+export default React.memo(Ad, areEqual);
