@@ -7,7 +7,12 @@ const house = require('../../assets/images/house.png');
 const Ad = ({item}) => {
   const {street_address: address, picture_first_filename: image} = item.Ad1;
   return (
-    <View style={styles.ad}>
+    <View
+      accessible={true}
+      accessibilityRole="imagebutton"
+      acessibilityLabel={address}
+      accessibilityHint={`Klicka för att navigera till detalj-skärm för ${address}`}
+      style={styles.ad}>
       <View style={styles.header}>
         <Text style={styles.title}>{address ? address : 'Adress saknas'}</Text>
       </View>
