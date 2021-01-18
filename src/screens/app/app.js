@@ -9,11 +9,12 @@ import styles from './app.styles';
 const App = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => getMoreAds(0), [getMoreAds]);
+
   const renderListFooter = () => (isLoading ? <Spinner /> : null);
   const keyExtractor = ({ad_id}) => ad_id.toString();
   const renderItem = ({item}) => <Ad item={item} />;
-
-  useEffect(() => getMoreAds(0), [getMoreAds]);
 
   const getMoreAds = useCallback(
     (currentDataLength) => {
