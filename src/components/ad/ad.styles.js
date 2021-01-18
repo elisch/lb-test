@@ -1,12 +1,9 @@
-import {StyleSheet, Dimensions} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {commonStyles, colors} from '../../assets/styles/common.styles';
-
-const windowWidth = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
   ad: {
     flex: 1,
-    height: windowWidth,
     marginVertical: 12,
     marginHorizontal: 24,
     ...commonStyles.shadow,
